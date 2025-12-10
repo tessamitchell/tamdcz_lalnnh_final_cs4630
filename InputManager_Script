@@ -1,34 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Placement : MonoBehaviour
+public class InputManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject mouseIndicator, cellIndicator;
+    private Camera sceneCamera;
+    private Vector3 lastPos;
 
     [SerializeField]
-    private InputManager inputManager;
+    private LayerMask placementLayermask;
 
-    [SerializeField]
-    private Grid grid;
-
-    private void Update()
+    public Vector3 GetSelectedPos()
     {
-        Vector3 mousePos = inputManager.GetSelectedPos();
-        Vector3Int gridPos = grid.WorldToCell(mousePos);
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = sceneCamera.nearClipPlane;
+        Ray ray = sceneCamera.ScreenPointToRay(mousePos);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100f, placementLayermask))
+        {
+            lastPos = hit.point;
+        }
 
-        mouseIndicator.transform.position = mousePos;
-        //cellIndicator.transform.position = grid.CellToWorld(gridPos);
-        //Vector3 pos = cellIndicator.transform.position;
-        //pos.z = -.1f;
-        //cellIndicator.transform.position = pos;
-
-
-
-
-        Vector3 snappePos = grid.CellToWorld(gridPos);
-        snappePos.z = -0.1f;
-        cellIndicator.transform.position = snappePos;
+        return lastPos;
     }
+
 }
