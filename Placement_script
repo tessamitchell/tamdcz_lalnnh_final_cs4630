@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Placement : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject mouseIndicator, cellIndicator;
+
+    [SerializeField]
+    private InputManager inputManager;
+
+    [SerializeField]
+    private Grid grid;
+
+    private void Update()
+    {
+        Vector3 mousePos = inputManager.GetSelectedPos();
+        Vector3Int gridPos = grid.WorldToCell(mousePos);
+
+        mouseIndicator.transform.position = mousePos;
+        //cellIndicator.transform.position = grid.CellToWorld(gridPos);
+        //Vector3 pos = cellIndicator.transform.position;
+        //pos.z = -.1f;
+        //cellIndicator.transform.position = pos;
+
+
+
+
+        Vector3 snappePos = grid.CellToWorld(gridPos);
+        snappePos.z = -0.1f;
+        cellIndicator.transform.position = snappePos;
+    }
+}
