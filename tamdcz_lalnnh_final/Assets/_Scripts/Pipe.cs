@@ -22,7 +22,7 @@ public class Pipe : MonoBehaviour
     {
         //Debug.Log("over");
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("click");
+            //Debug.Log("click");
             this.transform.Rotate(new Vector3(0, 0, -90));
         }
     }
