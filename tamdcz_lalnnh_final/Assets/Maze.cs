@@ -11,7 +11,9 @@ public class Maze
     public Cell[,] solvedMaze;
 
     public int[,] directions = {{-1, 0 }, {1, 0 }, {0,-1 },{0, 1 }};
-    
+    public List<Vector2Int> path;
+
+
     public void makeMaze(int height,int width)
     {
         this.height = height;
@@ -98,7 +100,7 @@ public class Maze
 
     public void SolveMaze()
     {
-        List<Vector2Int> path = MazeSolver.FindPath(this);
+        path = MazeSolver.FindPath(this);
 
     
         solvedMaze = new Cell[height, width];
@@ -126,6 +128,9 @@ public class Maze
             solvedMaze[pos.y, pos.x].isPath = true;
         }
 
+        
+
+
         // 4. Prune all non-path connections
         for (int y = 0; y < height; y++)
         {
@@ -149,6 +154,47 @@ public class Maze
                 }
             }
         }
+        //if (path.Count > 1)
+        //{
+        //    Vector2Int goal = path[path.Count - 1];
+        //    Vector2Int prev = path[path.Count - 2];
+
+        //    Cell c = solvedMaze[goal.y, goal.x];
+
+        //    // Close everything
+        //    c.above = c.below = c.left = c.right = false;
+
+        //    // Open only the direction back toward the path
+        //    if (prev.y == goal.y - 1) c.above = true;
+        //    else if (prev.y == goal.y + 1) c.below = true;
+        //    else if (prev.x == goal.x - 1) c.left = true;
+        //    else if (prev.x == goal.x + 1) c.right = true;
+        //}
+
+
+        //if (path.Count > 1)
+        //{
+        //    // Enforce exactly one exit at the start
+        //    Vector2Int start = path[0];
+        //    Vector2Int next = path[1];
+
+        //    Cell startCell = solvedMaze[start.y, start.x];
+        //    Cell nextCell = solvedMaze[next.y, next.x];
+
+        //    // Close all start exits
+        //    startCell.above = startCell.below = startCell.left = startCell.right = false;
+
+        //    // Open only the correct one
+        //    if (next.x == start.x) 
+        //    {
+        //        startCell.below = true;
+        //    }
+        //    else
+        //    {
+        //        startCell.right = true;
+        //    }
+
+        //}
     }
 
 
