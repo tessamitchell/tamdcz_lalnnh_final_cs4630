@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -10,6 +11,7 @@ public class Flower : MonoBehaviour
     [SerializeField] private int numOfChildren;
     [SerializeField] private List<GameObject> children;
     [SerializeField] public float waitTime = 10f;
+    public float timeElapsed = 0;
     private void Start()
     {
         flower = gameObject;
@@ -32,8 +34,8 @@ public class Flower : MonoBehaviour
             rb.mass = 0.1f;
             rb.drag = 0.2f;
             rb.angularDrag = 0.05f;
-            Debug.Log(rb);
-            Debug.Log($"Rigidbody ready on {petal.name}, isKinematic={rb.isKinematic}");
+            //Debug.Log(rb);
+            //Debug.Log($"Rigidbody ready on {petal.name}, isKinematic={rb.isKinematic}");
             //if (rb != null)
             //{
             //    DestroyImmediate(rb);
@@ -41,13 +43,26 @@ public class Flower : MonoBehaviour
         }
 
         //StartCoroutine(AddRig());
-        Invoke("dropPetal", waitTime);
+        Invoke("dropPetal",1f);
     }
 
 
     private void Update()
     {
-
+        timeElapsed += Time.deltaTime;
+        //if ((timeElapsed >25))
+        //{
+        //    waitTime = 1f;
+        //}
+        //else if (timeElapsed > 20)
+        //{
+        //    waitTime = 2f;
+        //}
+        //else if ((timeElapsed > 10))
+        //{
+        //    waitTime = 3f;
+        //}
+        
     }
 
     private void dropPetal()
@@ -67,8 +82,15 @@ public class Flower : MonoBehaviour
         {
             Rigidbody rb = child.GetComponent<Rigidbody>();
             rb.isKinematic = false;
-            Debug.Log("Dropped petal");
+            //Debug.Log("Dropped petal");
+            children.RemoveAt(index);
+            child.GetComponent<Collider>().isTrigger = true;
+
         }
-        Invoke("dropPetal", waitTime);
+        if (children.Count > 0) {
+            waitTime = Mathf.Max(1f, waitTime - 1f);
+            Invoke("dropPetal", waitTime);
+        }
+        
     }
 }

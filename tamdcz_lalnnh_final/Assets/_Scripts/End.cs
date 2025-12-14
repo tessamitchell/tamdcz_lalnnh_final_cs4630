@@ -25,6 +25,9 @@ public class End : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("StartScreen");
+        Score.SCORE = 0;
+        Score.LEVEL = 1;
+        Score.DIFFICULTY = 0;
     }
 
 }

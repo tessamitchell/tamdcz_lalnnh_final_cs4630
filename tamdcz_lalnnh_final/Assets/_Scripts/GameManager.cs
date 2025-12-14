@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
         LevelGen();
         levelText.text = "Level: " + Score.LEVEL;
         solvedText.enabled = false;
+        //Score.LEVEL = level;
     }
 
     // Update is called once per frame
@@ -67,13 +68,13 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Solved!");
             StartCoroutine(solvedMessage("Solved"));
-            Debug.Log(Score.LEVEL);
+            //Debug.Log(Score.LEVEL);
             solved = false;
-
+            
             if (Score.LEVEL < 3)
             {
                 Invoke("NextLevel", 2f);
-                Debug.Log(Score.LEVEL);
+                //Debug.Log(Score.LEVEL);
             }
             else
             {
@@ -118,7 +119,7 @@ public class GameManager : MonoBehaviour
             {
                 if(i==0 && j == 0)
                 {
-                    Debug.Log($"Start above {maze.solvedMaze[i, j].above} below {maze.solvedMaze[i, j].below} left {maze.solvedMaze[i, j].left} right {maze.solvedMaze[i, j].right}");
+                    //Debug.Log($"Start above {maze.solvedMaze[i, j].above} below {maze.solvedMaze[i, j].below} left {maze.solvedMaze[i, j].left} right {maze.solvedMaze[i, j].right}");
                     pipeOri[i,j]=addPipe(i, j, startPrefab);
                     if (maze.solvedMaze[i, j].right)
                     {
@@ -132,7 +133,7 @@ public class GameManager : MonoBehaviour
                 }
                 else if ((i==gridVertical-1) && (j == gridHorizontal - 1))
                 {
-                    Debug.Log($"End above {maze.solvedMaze[i, j].above} below {maze.solvedMaze[i, j].below} left {maze.solvedMaze[i, j].left} right {maze.solvedMaze[i, j].below}");
+                    //Debug.Log($"End above {maze.solvedMaze[i, j].above} below {maze.solvedMaze[i, j].below} left {maze.solvedMaze[i, j].left} right {maze.solvedMaze[i, j].below}");
                     pipeOri[i, j] = addPipe(i, j, goalPrefab);
                     if (maze.solvedMaze[i, j].left)
                     {
@@ -249,7 +250,7 @@ public class GameManager : MonoBehaviour
                 if (solution[i,j] !=-1)
                 {
 
-                    Debug.Log($"x: {i} y: {j} solution: {solution[i, j]} ori: {pipeOri[i, j]}");
+                    //Debug.Log($"x: {i} y: {j} solution: {solution[i, j]} ori: {pipeOri[i, j]}");
                     //Debug.Log($"x: {i} y: {j} solution: {solution[i, j] % 2} ori: {pipeOri[i, j] % 2}");
                     if (cells[i, j].CompareTag("Pipe") && (solution[i, j]%2 == pipeOri[i, j]%2))
                     {
@@ -265,6 +266,7 @@ public class GameManager : MonoBehaviour
             
         }
         Score.SCORE += (int)timeLeft;
+        
         solved = true;
         color();
         return true;
@@ -276,18 +278,39 @@ public class GameManager : MonoBehaviour
         List<Vector2Int> path = maze.path;
         foreach (Vector2Int pos in path)
         {
-            changeColor(cells[pos.y, pos.x]);
+            if(((pos.y == gridVertical-1) && (pos.x == gridHorizontal-1)))
+            {
+                continue;
+            }
+            
+                GameObject cell = cells[pos.y, pos.x];
+            if((pos.y == 0) && (pos.x == 0))
+            {
+                StartCoroutine(changeColor(cell.transform.GetChild(0).GetChild(0).gameObject));
+                continue;
+            }
+            if (cell.CompareTag("Pipe"))
+            {
+                StartCoroutine(changeColor(cell.transform.GetChild(0).gameObject));
+            }
+            else
+            {
+                StartCoroutine(changeColor(cell.transform.GetChild(0).gameObject));
+                StartCoroutine(changeColor(cell.transform.GetChild(1).gameObject));
+                StartCoroutine(changeColor(cell.transform.GetChild(2).gameObject));
+            }
+
         }
 
         return false;
     }
     IEnumerator changeColor(GameObject go)
     {
-        Color c2 = Color.blue;
+        Color c2 = new Color(0.50588f, 0.68235f,1,0f);
         Renderer renderer = go.GetComponent<Renderer>();
         float elapsedTime = 0f;
 
-        while (elapsedTime < 1.0f)
+        while (elapsedTime < 2.0f)
         {
             // Calculate the interpolation value (t) between 0 and 1
             // This determines how far along the transition we are
@@ -311,7 +334,7 @@ public class GameManager : MonoBehaviour
         solvedText.text = msg;
         solvedText.enabled = true;
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
 
         solvedText.enabled = false;
     }

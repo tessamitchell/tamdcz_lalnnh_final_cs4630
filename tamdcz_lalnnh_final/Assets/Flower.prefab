@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1875875936199959919}
   - component: {fileID: 1728969707716440513}
   - component: {fileID: 4508463560439369880}
-  - component: {fileID: -6714813077578009147}
   m_Layer: 0
   m_Name: flower (16)
   m_TagString: Untagged
@@ -106,33 +105,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-6714813077578009147
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 233294480563075653}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2069809089974161973
 GameObject:
   m_ObjectHideFlags: 0
@@ -145,7 +117,6 @@ GameObject:
   - component: {fileID: 2457756658742104996}
   - component: {fileID: 5316224606933330117}
   - component: {fileID: 8445062765402095462}
-  - component: {fileID: 8107721211704431392}
   m_Layer: 0
   m_Name: flower (2)
   m_TagString: Untagged
@@ -239,33 +210,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8107721211704431392
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069809089974161973}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2442078979905565460
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,7 +222,6 @@ GameObject:
   - component: {fileID: 1573079435199578708}
   - component: {fileID: 4893673722502291111}
   - component: {fileID: 1483442087901595612}
-  - component: {fileID: 8370798416285255999}
   m_Layer: 0
   m_Name: flower (12)
   m_TagString: Untagged
@@ -372,33 +315,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8370798416285255999
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2442078979905565460}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2616016303501953628
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +327,6 @@ GameObject:
   - component: {fileID: 4450427507436829299}
   - component: {fileID: 3194024178438140209}
   - component: {fileID: 7707781046923989129}
-  - component: {fileID: 879317618385802426}
   m_Layer: 0
   m_Name: flower (6)
   m_TagString: Untagged
@@ -505,33 +420,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &879317618385802426
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2616016303501953628}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2635862382642534771
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +432,6 @@ GameObject:
   - component: {fileID: 459090827760072597}
   - component: {fileID: 3272761420122664684}
   - component: {fileID: 542594715337067454}
-  - component: {fileID: -2584301329969512000}
   m_Layer: 0
   m_Name: flower (5)
   m_TagString: Untagged
@@ -638,33 +525,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-2584301329969512000
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2635862382642534771}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &2813687532421056205
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +537,6 @@ GameObject:
   - component: {fileID: 1158347925719153388}
   - component: {fileID: 1770564537844328124}
   - component: {fileID: 8124071090275021052}
-  - component: {fileID: -4198058294777539922}
   m_Layer: 0
   m_Name: flower (15)
   m_TagString: Untagged
@@ -771,33 +630,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-4198058294777539922
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2813687532421056205}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3155679783958812019
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,7 +642,6 @@ GameObject:
   - component: {fileID: 6511365899225826940}
   - component: {fileID: 5450307248378728858}
   - component: {fileID: 8219348681923774284}
-  - component: {fileID: 7047545229577036288}
   m_Layer: 0
   m_Name: flower (13)
   m_TagString: Untagged
@@ -904,33 +735,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7047545229577036288
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3155679783958812019}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3219349293837045232
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +747,6 @@ GameObject:
   - component: {fileID: 1735024623582524684}
   - component: {fileID: 706171111497389454}
   - component: {fileID: 5980783328935920889}
-  - component: {fileID: -2457838363140940461}
   m_Layer: 0
   m_Name: flower (3)
   m_TagString: Untagged
@@ -1037,33 +840,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-2457838363140940461
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3219349293837045232}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &3704683438251961218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +852,6 @@ GameObject:
   - component: {fileID: 715588908909111574}
   - component: {fileID: 3123036706076241321}
   - component: {fileID: 1583390093780499286}
-  - component: {fileID: 8583660124316046626}
   m_Layer: 0
   m_Name: flower (11)
   m_TagString: Untagged
@@ -1170,33 +945,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &8583660124316046626
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3704683438251961218}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &4242188300042241473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,7 +1009,8 @@ MonoBehaviour:
   flower: {fileID: 0}
   numOfChildren: 0
   children: []
-  waitTime: 5.5
+  waitTime: 8
+  timeElapsed: 0
 --- !u!1 &6330664530305144761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1274,7 +1023,6 @@ GameObject:
   - component: {fileID: 483023188374501751}
   - component: {fileID: 6796736079546712474}
   - component: {fileID: 269189035649254913}
-  - component: {fileID: -305418663218830806}
   m_Layer: 0
   m_Name: flower (14)
   m_TagString: Untagged
@@ -1368,33 +1116,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-305418663218830806
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6330664530305144761}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7157242749748366330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1512,7 +1233,6 @@ GameObject:
   - component: {fileID: 1623551243522869814}
   - component: {fileID: 4022355765190894385}
   - component: {fileID: 447580902372153407}
-  - component: {fileID: -8554721941128910726}
   m_Layer: 0
   m_Name: flower (10)
   m_TagString: Untagged
@@ -1606,33 +1326,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-8554721941128910726
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7335340930120425080}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7528150644369209348
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +1338,6 @@ GameObject:
   - component: {fileID: 1528140662609842284}
   - component: {fileID: 7971547715008737534}
   - component: {fileID: 6555812200472917173}
-  - component: {fileID: 306332318572225396}
   m_Layer: 0
   m_Name: flower (4)
   m_TagString: Untagged
@@ -1739,33 +1431,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &306332318572225396
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7528150644369209348}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8442654601690780411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1443,6 @@ GameObject:
   - component: {fileID: 6018419388900796237}
   - component: {fileID: 6379509373069493312}
   - component: {fileID: 8766975714114303617}
-  - component: {fileID: 7904616306480539080}
   m_Layer: 0
   m_Name: flower (7)
   m_TagString: Untagged
@@ -1872,33 +1536,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &7904616306480539080
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8442654601690780411}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8563917302976809206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,7 +1548,6 @@ GameObject:
   - component: {fileID: 3633265596453149644}
   - component: {fileID: 6410422640145970825}
   - component: {fileID: 801011869098347545}
-  - component: {fileID: 472931172283465311}
   m_Layer: 0
   m_Name: flower (9)
   m_TagString: Untagged
@@ -2005,33 +1641,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &472931172283465311
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8563917302976809206}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8773555274642105575
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,7 +1653,6 @@ GameObject:
   - component: {fileID: 5546224720791755675}
   - component: {fileID: 6066617718040458288}
   - component: {fileID: 1927115053547354273}
-  - component: {fileID: -6912027418128629065}
   m_Layer: 0
   m_Name: flower
   m_TagString: Untagged
@@ -2138,33 +1746,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-6912027418128629065
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8773555274642105575}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &8872257190031075652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2177,7 +1758,6 @@ GameObject:
   - component: {fileID: 8513006646384246521}
   - component: {fileID: 2941331858254160366}
   - component: {fileID: 1550549303350754911}
-  - component: {fileID: -5826228272745268640}
   m_Layer: 0
   m_Name: flower (8)
   m_TagString: Untagged
@@ -2271,30 +1851,3 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-5826228272745268640
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8872257190031075652}
-  serializedVersion: 4
-  m_Mass: 0.1
-  m_Drag: 0.2
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0

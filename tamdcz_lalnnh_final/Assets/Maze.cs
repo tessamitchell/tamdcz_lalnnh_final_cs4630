@@ -64,26 +64,26 @@ public class Maze
     {
         if (y1 == y2)
         {
-            if (x1 < x2)        // cell2 is to the right
+            if (x1 < x2)        //right
             {
                 maze[y1, x1].right = true;
                 maze[y2, x2].left = true;
             }
-            else                // cell2 is to the left
+            else                // left
             {
                 maze[y1, x1].left = true;
                 maze[y2, x2].right = true;
             }
         }
-        // Same column  vertical neighbors
+        // same column
         else
         {
-            if (y1 < y2)        // cell2 is below
+            if (y1 < y2)    // below    
             {
                 maze[y1, x1].below = true;
                 maze[y2, x2].above = true;
             }
-            else                // cell2 is above
+            else                // above
             {
                 maze[y1, x1].above = true;
                 maze[y2, x2].below = true;
@@ -106,7 +106,7 @@ public class Maze
         solvedMaze = new Cell[height, width];
   
         
-
+        // fill new solved array with cells
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -122,23 +122,20 @@ public class Maze
             }
         }
 
-        // 3. Mark the solution path
+        // set solution cells
         foreach (var pos in path)
         {
             solvedMaze[pos.y, pos.x].isPath = true;
         }
 
-        
-
-
-        // 4. Prune all non-path connections
+        // get rid of non path cells in solved maze
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
                 if (!solvedMaze[y, x].isPath)
                 {
-                    // Remove all walls for cells not on the path
+                    // if not path, close all walls
                     solvedMaze[y, x].above = false;
                     solvedMaze[y, x].below = false;
                     solvedMaze[y, x].left = false;
@@ -146,7 +143,7 @@ public class Maze
                 }
                 else
                 {
-                    // For path cells, remove walls that lead to non-path neighbors
+                    // make sure only open walls are those that are on path
                     if (y > 0 && !solvedMaze[y - 1, x].isPath) solvedMaze[y, x].above = false;
                     if (y < height - 1 && !solvedMaze[y + 1, x].isPath) solvedMaze[y, x].below = false;
                     if (x > 0 && !solvedMaze[y, x - 1].isPath) solvedMaze[y, x].left = false;
@@ -154,47 +151,7 @@ public class Maze
                 }
             }
         }
-        //if (path.Count > 1)
-        //{
-        //    Vector2Int goal = path[path.Count - 1];
-        //    Vector2Int prev = path[path.Count - 2];
-
-        //    Cell c = solvedMaze[goal.y, goal.x];
-
-        //    // Close everything
-        //    c.above = c.below = c.left = c.right = false;
-
-        //    // Open only the direction back toward the path
-        //    if (prev.y == goal.y - 1) c.above = true;
-        //    else if (prev.y == goal.y + 1) c.below = true;
-        //    else if (prev.x == goal.x - 1) c.left = true;
-        //    else if (prev.x == goal.x + 1) c.right = true;
-        //}
-
-
-        //if (path.Count > 1)
-        //{
-        //    // Enforce exactly one exit at the start
-        //    Vector2Int start = path[0];
-        //    Vector2Int next = path[1];
-
-        //    Cell startCell = solvedMaze[start.y, start.x];
-        //    Cell nextCell = solvedMaze[next.y, next.x];
-
-        //    // Close all start exits
-        //    startCell.above = startCell.below = startCell.left = startCell.right = false;
-
-        //    // Open only the correct one
-        //    if (next.x == start.x) 
-        //    {
-        //        startCell.below = true;
-        //    }
-        //    else
-        //    {
-        //        startCell.right = true;
-        //    }
-
-        //}
+        
     }
 
 
@@ -230,7 +187,7 @@ public class UnionFind
 
     public int Find(int x)
     {
-        //Debug.Log(x);
+        
         if (x<parent.Length && parent[x] != x)
         {
             parent[x]=Find(parent[x]);
@@ -277,7 +234,7 @@ public class MazeSolver
 
         queue.Enqueue(start);
         visited[start.y, start.x] = true;
-        parent[start.y, start.x] = new Vector2Int(-1, -1); // mark start parent as invalid
+        parent[start.y, start.x] = new Vector2Int(-1, -1); // starting parent is invalid
 
         int[,] directions = new int[,] { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
@@ -301,10 +258,10 @@ public class MazeSolver
                 if (visited[ny, nx])
                     continue;
 
-                // Check if wall is open in the direction
+                // see if wall is open
                 bool canMove = false;
-                if (i == 0 && cell.above) canMove = true; // up
-                if (i == 1 && cell.below) canMove = true; // down
+                if (i == 0 && cell.above) canMove = true; // above
+                if (i == 1 && cell.below) canMove = true; // below
                 if (i == 2 && cell.left) canMove = true;  // left
                 if (i == 3 && cell.right) canMove = true; // right
 
@@ -316,7 +273,7 @@ public class MazeSolver
             }
         }
 
-        // reconstruct path
+        // build path to return
         List<Vector2Int> path = new List<Vector2Int>();
         if (!visited[end.y, end.x])
         {
