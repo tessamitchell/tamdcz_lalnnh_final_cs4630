@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
     static private int score = 0;
     static private int level = 1;
     static private float difficulty = 0.1f;
+    static private int fails = 0;
     
 
     static public int SCORE
@@ -26,6 +27,10 @@ public class Score : MonoBehaviour
         set { difficulty = value; }
     }
 
-  
+    static public int FAILS { get { return fails; } set { fails = value; } }
+
+
+
+
 
 }

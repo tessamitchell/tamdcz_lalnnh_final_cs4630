@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI solvedText;
     float timeLeft = 30f;
 
     public float prefabScale = 0.5f;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
         initArrays(solution);
         LevelGen();
         levelText.text = "Level: " + Score.LEVEL;
+        solvedText.enabled = false;
     }
 
     // Update is called once per frame
@@ -64,13 +66,14 @@ public class GameManager : MonoBehaviour
         if (solved)
         {
             Debug.Log("Solved!");
-            color();
-            
+            StartCoroutine(solvedMessage("Solved"));
+            Debug.Log(Score.LEVEL);
             solved = false;
 
             if (Score.LEVEL < 3)
             {
                 Invoke("NextLevel", 2f);
+                Debug.Log(Score.LEVEL);
             }
             else
             {
@@ -81,8 +84,9 @@ public class GameManager : MonoBehaviour
         }
         else if (timeLeft <= 0)
         {
-            Score.SCORE -= 10;
-            Invoke("restart", 2f);
+      
+            SceneManager.LoadScene("EndScreen");
+  
         }
         else
         {
@@ -262,14 +266,57 @@ public class GameManager : MonoBehaviour
         }
         Score.SCORE += (int)timeLeft;
         solved = true;
+        color();
         return true;
     }
 
 
     public bool color()
     {
+        List<Vector2Int> path = maze.path;
+        foreach (Vector2Int pos in path)
+        {
+            changeColor(cells[pos.y, pos.x]);
+        }
+
         return false;
     }
+    IEnumerator changeColor(GameObject go)
+    {
+        Color c2 = Color.blue;
+        Renderer renderer = go.GetComponent<Renderer>();
+        float elapsedTime = 0f;
+
+        while (elapsedTime < 1.0f)
+        {
+            // Calculate the interpolation value (t) between 0 and 1
+            // This determines how far along the transition we are
+            float t = elapsedTime / 2.0f;
+
+            // Interpolate from startColor to endColor
+            renderer.material.color = Color.Lerp(renderer.material.color, c2, t);
+
+            // Increment the elapsed time by the time passed since the last frame
+            elapsedTime += Time.deltaTime;
+
+            // Yield control back to Unity until the next frame
+            yield return null;
+        }
+
+        // Ensure the final color is exactly the end color after the loop finishes
+        renderer.material.color = c2;
+    }
+    private IEnumerator solvedMessage(string msg)
+    {
+        solvedText.text = msg;
+        solvedText.enabled = true;
+
+        yield return new WaitForSeconds(1);
+
+        solvedText.enabled = false;
+    }
+
+
 
     public void restart()
     {
@@ -283,5 +330,9 @@ public class GameManager : MonoBehaviour
         int next = current + 1;
         SceneManager.LoadScene(next);
        
+    }
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndScreen");
     }
 }
