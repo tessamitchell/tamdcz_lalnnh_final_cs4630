@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public GameObject startPrefab;
     public GameObject goalPrefab;
     public RandomFlower flower;
+    public AudioClip solvedSound;
     public int[] orientations = { 0, -90,180, 90};
 
     public int[,] pipeOri;
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(solvedMessage("Solved"));
             //Debug.Log(Score.LEVEL);
             solved = false;
-            
+            playSolvedSound();
             if (Score.LEVEL < 3)
             {
                 Invoke("NextLevel", 2f);
@@ -339,6 +340,11 @@ public class GameManager : MonoBehaviour
         solvedText.enabled = false;
     }
 
+    public void playSolvedSound()
+    {
+        AudioSource.PlayClipAtPoint(solvedSound,transform.position);
+        Debug.Log("Sound Played");
+    }
 
 
     public void restart()
