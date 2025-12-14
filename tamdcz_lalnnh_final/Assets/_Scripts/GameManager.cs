@@ -22,16 +22,24 @@ public class GameManager : MonoBehaviour
     public GameObject jointPrefab;
     public GameObject startPrefab;
     public GameObject goalPrefab;
+    public RandomFlower flower;
     public int[] orientations = { 0, -90,180, 90};
 
     public int[,] pipeOri;
 
-    float prob = .1f;
+    
     bool solved = false;
 
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI levelText;
     float timeLeft = 30f;
+
+    public float prefabScale = 0.5f;
+    public float prob = .1f;
+
+    public int level = 1;
+
 
 
     // Start is called before the first frame update
@@ -45,6 +53,7 @@ public class GameManager : MonoBehaviour
         pipeOri = new int[gridVertical, gridHorizontal];
         initArrays(solution);
         LevelGen();
+        levelText.text = "Level: " + Score.LEVEL;
     }
 
     // Update is called once per frame
@@ -56,14 +65,31 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Solved!");
             color();
-            Score.SCORE += (int)timeLeft;
+            
+            solved = false;
+
+            if (Score.LEVEL < 3)
+            {
+                Invoke("NextLevel", 2f);
+            }
+            else
+            {
+                Score.DIFFICULTY += 0.1f;
+                Invoke("restart", 2f);
+            }
+            Score.LEVEL++;
+        }
+        else if (timeLeft <= 0)
+        {
+            Score.SCORE -= 10;
             Invoke("restart", 2f);
         }
         else
         {
-            timeLeft-= Time.deltaTime;
+            timeLeft -= Time.deltaTime;
             int seconds = (int)timeLeft;
-            timerText.text = "Time Left: "+seconds.ToString();
+            timerText.text = "Time Left: " + seconds.ToString();
+            scoreText.text = "Score: " + Score.SCORE.ToString();
         }
     }
 
@@ -119,7 +145,7 @@ public class GameManager : MonoBehaviour
                 {
                     blockGen(i, j);
                 }
-                else if ((UnityEngine.Random.value <= prob)  && (maze.maze[i, j].above || maze.maze[i, j].below || maze.maze[i, j].right || maze.maze[i, j].left))
+                else if ((UnityEngine.Random.value <= Score.DIFFICULTY)  && (maze.maze[i, j].above || maze.maze[i, j].below || maze.maze[i, j].right || maze.maze[i, j].left))
                 {
                     nonPathBlockGen(i, j);
                 }
@@ -200,7 +226,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Vector3 cellSize = grid.cellSize; // (3,3,0)
-        //gO.transform.localScale = new Vector3(cellSize.x, cellSize.y, 1);
+        gO.transform.localScale = new Vector3(prefabScale, prefabScale, 1);
         int ori = UnityEngine.Random.Range(0, 4);
         gO.transform.Rotate(0, 0, ori*(-90));
         cells[x, y] = gO;
@@ -234,6 +260,7 @@ public class GameManager : MonoBehaviour
             }
             
         }
+        Score.SCORE += (int)timeLeft;
         solved = true;
         return true;
     }
@@ -246,6 +273,15 @@ public class GameManager : MonoBehaviour
 
     public void restart()
     {
-        SceneManager.LoadScene("Scene1");
+        int current = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(current);
+    }
+
+    public void NextLevel()
+    {
+        int current = SceneManager.GetActiveScene().buildIndex;
+        int next = current + 1;
+        SceneManager.LoadScene(next);
+       
     }
 }

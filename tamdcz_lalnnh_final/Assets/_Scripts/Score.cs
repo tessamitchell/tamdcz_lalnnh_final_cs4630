@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-    static private int score;
+    static private int score = 0;
+    static private int level = 1;
+    static private float difficulty = 0.1f;
     
 
     static public int SCORE
@@ -12,5 +14,18 @@ public class Score : MonoBehaviour
         get { return score; }
         set { score = value; }
     }
+
+    static public int LEVEL
+    {
+        get { return level; }
+        set {  level = value; }
+    }
+
+    static public float DIFFICULTY 
+    { get { return difficulty; }
+        set { difficulty = value; }
+    }
+
+  
 
 }
